@@ -11,6 +11,9 @@ class MyDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
+          SizedBox(
+            height: 55,
+          ),
           ListTile(
             leading: Icon(Icons.home),
             title: Text('Home'),

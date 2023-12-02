@@ -47,31 +47,33 @@ class _WeatherSearchPageState extends State<WeatherSearchPage> {
         ],
       ),
       drawer: MyDrawer(),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _cityController,
-              decoration: InputDecoration(labelText: 'Enter City'),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                String cityName = _cityController.text;
-                if (cityName.isNotEmpty) {
-                  _getWeather(cityName);
-                }
-              },
-              child: Text('Search'),
-            ),
-            SizedBox(height: 20),
-            Image.asset('assets/images/weather.png'),
-            Text(
-              _weatherInfo,
-              style: TextStyle(fontSize: 18),
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              TextField(
+                controller: _cityController,
+                decoration: InputDecoration(labelText: 'Enter City'),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  String cityName = _cityController.text;
+                  if (cityName.isNotEmpty) {
+                    _getWeather(cityName);
+                  }
+                },
+                child: Text('Search'),
+              ),
+              SizedBox(height: 20),
+              Image.asset('assets/images/weather.png'),
+              Text(
+                _weatherInfo,
+                style: TextStyle(fontSize: 18),
+              ),
+            ],
+          ),
         ),
       ),
     );

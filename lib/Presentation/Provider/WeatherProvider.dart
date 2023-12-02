@@ -3,7 +3,8 @@ import 'package:http/http.dart' as http;
 import '../../Models/weather_module.dart';
 
 Future<WeatherData> fetchWeatherData(String cityName) async {
-  final apiKey = '2109a912d1599f22d485a5ac7933daad';
+  final apiKey =
+      '2109a912d1599f22d485a5ac7933daad'; // Replace with your OpenWeatherMap API key
 
   final response = await http.get(Uri.parse(
       'https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey&units=metric'));
